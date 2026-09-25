@@ -1,5 +1,6 @@
 #ifndef PERSONAGEM_H
 #define PERSONAGEM_H
+
 #include <string>
 using namespace std;
 
@@ -13,9 +14,8 @@ public:
     int getHp();
     int getForca();
 
-    // Outros métodos
-    void imprimir();
-    void atacar(Personagem* p);
+    virtual void imprimir();
+    virtual void atacar(Personagem* p);
     void defender(int forca);
 
 protected:

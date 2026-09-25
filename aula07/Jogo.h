@@ -1,8 +1,3 @@
-/*
- * Use as diretivas adequadas e
- * inclua os arquivos e/ou bibliotecas necessarios para a classe.
- */
-
 #ifndef JOGO_H
 #define JOGO_H
 #include "Personagem.h"
@@ -14,6 +9,9 @@ class Jogo {
     Monstro** monstros = new Monstro*[MAXIMO_DE_MONSTROS];
     int quantidade = 0;
 public:
+    Jogo();
+    virtual ~Jogo();
+    
     void setJogador(Personagem* p);
     void adicionarMonstro(Monstro* monstro);
     int jogar();

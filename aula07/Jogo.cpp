@@ -1,10 +1,14 @@
-/*
- * Faca os includes necessarios
- */
 #include "Jogo.h"
 #include "Guerreiro.h"
 #include <iostream>
+
 using namespace std;
+
+Jogo::Jogo() {
+}
+
+Jogo::~Jogo() {
+}
 
 void Jogo::setJogador(Personagem* p){
     jogador = p;
@@ -21,11 +25,18 @@ void Jogo::adicionarMonstro(Monstro* monstro){
 }
 
 void Jogo::lutar(Monstro* monstro){
-    // Corrija seguindo o enunciado
-    for(int i = 1; monstro->getHp() > 0 && jogador->getHp() > 0; i++){
-        jogador->atacar(monstro);
-        if(monstro->getHp() > 0)
+    Guerreiro* g = (Guerreiro*) jogador;
+
+    while(monstro->getHp() > 0 && jogador->getHp() > 0){
+        if (monstro->getNivel() > 3) {
+            g->atacar(monstro, 1.5);
+        } else {
+            jogador->atacar(monstro);
+        }
+
+        if(monstro->getHp() > 0) {
             monstro->atacar(jogador);
+        }
     }
 }
 

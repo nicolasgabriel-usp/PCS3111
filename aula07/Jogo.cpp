@@ -1,15 +1,7 @@
 #include "Jogo.h"
 #include "Guerreiro.h"
 #include <iostream>
-
 using namespace std;
-
-Jogo::Jogo() {
-}
-
-Jogo::~Jogo() {
-    delete[] monstros;
-}
 
 void Jogo::setJogador(Personagem* p){
     jogador = p;
@@ -28,16 +20,15 @@ void Jogo::adicionarMonstro(Monstro* monstro){
 void Jogo::lutar(Monstro* monstro){
     Guerreiro* g = dynamic_cast<Guerreiro*>(jogador);
 
-    while(monstro->getHp() > 0 && jogador->getHp() > 0){
+    for(int i = 1; monstro->getHp() > 0 && jogador->getHp() > 0; i++){
         if (g != nullptr && monstro->getNivel() > 3) {
             g->atacar(monstro, 1.5);
         } else {
             jogador->atacar(monstro);
         }
 
-        if(monstro->getHp() > 0) {
+        if(monstro->getHp() > 0)
             monstro->atacar(jogador);
-        }
     }
 }
 

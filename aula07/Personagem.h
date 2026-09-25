@@ -1,6 +1,5 @@
 #ifndef PERSONAGEM_H
 #define PERSONAGEM_H
-
 #include <string>
 using namespace std;
 
@@ -14,6 +13,7 @@ public:
     int getHp();
     int getForca();
 
+    // Outros métodos (tornados virtuais para ligação dinâmica)
     virtual void imprimir();
     virtual void atacar(Personagem* p);
     void defender(int forca);

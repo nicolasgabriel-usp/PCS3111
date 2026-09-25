@@ -8,6 +8,7 @@ Jogo::Jogo() {
 }
 
 Jogo::~Jogo() {
+    delete[] monstros;
 }
 
 void Jogo::setJogador(Personagem* p){
@@ -25,10 +26,10 @@ void Jogo::adicionarMonstro(Monstro* monstro){
 }
 
 void Jogo::lutar(Monstro* monstro){
-    Guerreiro* g = (Guerreiro*) jogador;
+    Guerreiro* g = dynamic_cast<Guerreiro*>(jogador);
 
     while(monstro->getHp() > 0 && jogador->getHp() > 0){
-        if (monstro->getNivel() > 3) {
+        if (g != nullptr && monstro->getNivel() > 3) {
             g->atacar(monstro, 1.5);
         } else {
             jogador->atacar(monstro);

@@ -25,18 +25,29 @@ void teste1(){
 }
 
 void teste2(){
-    Guerreiro* g = new Guerreiro("Theo", 100, 20);
-    Monstro* m1 = new Monstro("Victor", 2);
-    Monstro* m2 = new Monstro("Chefe", 4);
+    Guerreiro* theo = new Guerreiro("Theo", 100, 8);
+    Monstro* victor = new Monstro("Victor", 4);
 
-    Jogo jogo;
-    jogo.setJogador(g);
-    jogo.adicionarMonstro(m1);
-    jogo.adicionarMonstro(m2);
+    Personagem* jorge = new Personagem("Jorge", 100, 8);
 
-    jogo.jogar();
+    Monstro* fabio = new Monstro("Fabio", 4);
 
-    delete g;
-    delete m1;
-    delete m2;
+    Jogo* jogo1 = new Jogo();
+    Jogo* jogo2 = new Jogo();
+
+    jogo1->setJogador(jorge);
+    jogo1->adicionarMonstro(fabio);
+
+    jogo2->setJogador(theo);
+    jogo2->adicionarMonstro(victor);
+
+    jogo1->jogar();
+    jogo2->jogar();
+
+    delete theo;
+    delete victor;
+    delete jorge;
+    delete fabio;
+    delete jogo1;
+    delete jogo2;
 }

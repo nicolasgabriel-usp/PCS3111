@@ -1,0 +1,12 @@
+Grimm
+100
+70
+PureVessel
+90
+60
+Radiance
+120
+100
+Zote
+1
+1

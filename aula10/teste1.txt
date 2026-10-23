@@ -1,0 +1,6 @@
+Knight
+20
+10
+Hornet
+30
+15
